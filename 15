@@ -1,0 +1,2 @@
+Nous devons ajouter ces informations au fichier contenant les entrees locales DNS
+echo "46.19.122.85 intra.42.fr" >> /etc/hosts

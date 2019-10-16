@@ -1,0 +1,6 @@
+#!/bin/bash
+ifconfig en0
+echo "a : " && ifconfig en0 | grep inet | tail -n 1 | cut -d " " -f5 -f6
+echo "b : Le masque de sous-reseau etant ffff0000, les adresses IP faisant partie du meme sous-reseau vont de 10.12.0.0 a 10.12.255.255. Les addresses 10.12.0.0 et 10.12.255.255 sont reservees"
+echo "Les adresses IP actives sont :"
+arp -a | cut -d ' ' -f2 | grep "10.12"

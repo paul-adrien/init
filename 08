@@ -1,0 +1,2 @@
+La commande dig slash16.org nous donne les "authoritative dns servers" (whois slash16.org egalement)
+Leurs noms contient "awsdns", ce qui nous indique les serveurs Amazon Web Services
