@@ -1,0 +1,11 @@
+#!/bin/sh
+variable=$(curl -s https://fr.wikipedia.org/wiki/Liste_des_pays_par_population | grep -iA 2 $1 | grep 'right' | cut -c19-)
+variable2=$(curl -s https://fr.wikipedia.org/wiki/Liste_des_pays_par_population | grep -iA 5 $1 | grep 'center' | cut -c20- | cut -d'<' -f1)
+var=${variable//<\/td>/}
+var2=${variable2}
+if [ "${var//&#160;/ }" = "" ]; then
+    echo "Ce pays $1 n'existe pas"
+else
+    echo "La population de ce pays: $1 est de ${var//&#160;/ } d'habitants en ${var2}"
+fi
+exit
